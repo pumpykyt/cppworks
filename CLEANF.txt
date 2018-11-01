@@ -1,0 +1,53 @@
+void clean(int i, int j) {
+	
+	if ((i >= 0) && (i < n)) {
+		if ((j >= 0) && (j < n)) {
+			
+			if (field[i][j] == '*') {
+				
+				
+				
+				
+				if (field0[i][j] == 0) {
+					field[i][j] = '0';
+
+					clean(i - 1, j);
+					clean(i, j - 1);
+					clean(i, j + 1);
+					clean(i + 1, j);
+
+				}
+				else
+				{
+					if (field0[i][j] == 1)
+					{
+						if (isdigit(field[i - 1][j - 1]))
+							field[i-1][j-1]++;
+						if (isdigit(field[i + 1][j + 1]))
+							field[i + 1][j + 1]++;
+						if (isdigit(field[i + 1][j - 1]))
+							field[i + 1][j - 1]++;
+						if (isdigit(field[i - 1][j + 1]))
+							field[i - 1][j + 1]++;
+						if (isdigit(field[i + 1][j]))
+							field[i + 1][j]++;
+						if (isdigit(field[i ][j + 1]))
+							field[i][j + 1]++;
+						if (isdigit(field[i - 1][j]))
+							field[i - 1][j]++;
+						if (isdigit(field[i][j - 1]))
+							field[i][j - 1]++;
+						
+						
+					}
+
+				}
+
+				
+					
+				
+				
+			}
+		}
+	}
+}
